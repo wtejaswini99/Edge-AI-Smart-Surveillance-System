@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Surveillance Dashboard</title>
+
+    <meta http-equiv="refresh" content="5">
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:#f4f6f9;
+            margin:30px;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        .cards{
+            display:flex;
+            gap:20px;
+            justify-content:center;
+            margin:25px 0;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            width:180px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,.2);
+            text-align:center;
+        }
+
+        .card h2{
+            margin:0;
+            font-size:34px;
+        }
+
+        .card p{
+            margin-top:8px;
+            font-weight:bold;
+        }
+
+        .refresh{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .refresh button{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th{
+            background:#222;
+            color:white;
+            padding:12px;
+        }
+
+        td{
+            padding:10px;
+            text-align:center;
+            border-bottom:1px solid #ddd;
+        }
+
+        .yes{
+            color:white;
+            background:red;
+            padding:5px 10px;
+            border-radius:20px;
+        }
+
+        .no{
+            color:white;
+            background:green;
+            padding:5px 10px;
+            border-radius:20px;
+        }
+        img{
+    transition:0.3s;
+}
+
+        img:hover{
+    transform:scale(1.8);
+}
+
+        tr:hover{
+            background:#f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Smart Surveillance Dashboard</h1>
+
+<div class="cards">
+
+    <div class="card">
+        <h2>{{ total }}</h2>
+        <p>Total Detections</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ blacklisted }}</h2>
+        <p>Blacklisted</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ known }}</h2>
+        <p>Known Persons</p>
+    </div>
+
+    <div class="card">
+        <h2>{{ unknown }}</h2>
+        <p>Unknown Persons</p>
+    </div>
+
+</div>
+
+<div class="refresh">
+    <button onclick="location.reload();">Refresh</button>
+</div>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Date</th>
+<th>Time</th>
+<th>Mask</th>
+<th>Distance</th>
+<th>Image</th>
+</tr>
+
+{% for row in detections %}
+
+<tr>
+
+<td>{{ row.id }}</td>
+
+<td>{{ row.name }}</td>
+
+<td>{{ row.date }}</td>
+
+<td>{{ row.time }}</td>
+
+<td>
+{% if row.mask=="Yes" %}
+<span class="yes">YES</span>
+{% else %}
+<span class="no">NO</span>
+{% endif %}
+</td>
+
+<td>{{ "%.3f"|format(row.distance) }}</td>
+<td>
+{% if row.image %}
+    <a href="/{{ row.image }}" target="_blank">
+        <img src="/{{ row.image }}"
+             width="100"
+             style="border-radius:8px;border:1px solid #ccc;">
+    </a>
+{% else %}
+    -
+{% endif %}
+</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

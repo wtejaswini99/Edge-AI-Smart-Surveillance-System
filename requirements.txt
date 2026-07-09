@@ -1,0 +1,10 @@
+opencv-python
+opencv-contrib-python
+numpy
+torch
+torchvision
+facenet-pytorch
+ultralytics
+flask
+requests
+pillow
