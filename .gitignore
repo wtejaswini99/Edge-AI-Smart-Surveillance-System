@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+config.py
+myenv/
+__pycache__/
+alerts/
+registered_faces/
+face_database/
+*.db
+*.pkl
+*.pt
