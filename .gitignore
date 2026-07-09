@@ -224,4 +224,3 @@ registered_faces/
 face_database/
 *.db
 *.pkl
-*.pt
