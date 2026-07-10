@@ -2,18 +2,23 @@
 
 ## Overview
 
-The Edge AI Smart Surveillance System is an intelligent real-time surveillance application developed using Python, Computer Vision, and Deep Learning. The system performs face recognition, object detection, mask detection, and generates instant Telegram alerts for suspicious activities. It stores detection records in an SQLite database and provides a Flask-based dashboard for monitoring surveillance events.
+Edge AI Smart Surveillance System is an intelligent real-time surveillance application developed using Python and computer vision techniques. The system captures live video through a webcam and performs face recognition, person detection, and mask detection on edge devices without relying on cloud processing. It also records surveillance events in an SQLite database, displays them on a Flask web dashboard, and sends instant Telegram alerts whenever an unknown person is detected.
+
+---
 
 ## Features
 
 - Real-time face recognition using FaceNet and MTCNN
-- Authorized and blacklisted person identification
 - Unknown person detection
-- Object detection using YOLOv8
+- Person detection using YOLOv8
 - Face mask detection
-- Telegram alert notifications with captured images
-- SQLite database for detection records
-- Flask web dashboard for surveillance monitoring
+- Automatic Telegram alert notifications with captured images
+- SQLite database for storing surveillance records
+- Flask-based web dashboard for viewing detection history
+- Face registration and embedding generation for new users
+- Edge AI processing without cloud dependency
+
+---
 
 ## Technologies Used
 
@@ -22,45 +27,92 @@ The Edge AI Smart Surveillance System is an intelligent real-time surveillance a
 - FaceNet
 - MTCNN
 - YOLOv8
-- PyTorch
 - Flask
 - SQLite
-- Telegram Bot API
+- NumPy
+- PyTorch
+- Requests
+
+---
 
 ## Project Structure
 
 ```
-Edge-AI-Smart-Surveillance/
+Edge-AI-Smart-Surveillance-System/
+│
 ├── final_facenet_surveillance.py
 ├── register_person.py
 ├── generate_embeddings.py
-├── mask_detection.py
 ├── object_detection.py
+├── mask_detection.py
 ├── database.py
 ├── server.py
 ├── telegram_receiver.py
 ├── templates/
+│   └── dashboard.html
+├── requirements.txt
 └── README.md
 ```
 
+---
+
 ## Installation
 
-1. Clone the repository.
-2. Install the required Python libraries.
-3. Create a `config.py` file containing:
+1. Clone the repository
+
+```bash
+git clone https://github.com/wtejaswini99/Edge-AI-Smart-Surveillance-System.git
+```
+
+2. Move into the project directory
+
+```bash
+cd Edge-AI-Smart-Surveillance-System
+```
+
+3. Install the required libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Create a `config.py` file
 
 ```python
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+BOT_TOKEN = "YOUR_BOT_TOKEN"
 CHAT_ID = "YOUR_CHAT_ID"
 ```
 
-4. Generate face embeddings.
-5. Run the surveillance system.
+5. Download the required model files and place them in the project folder.
+
+6. Run the main surveillance system
+
+```bash
+python final_facenet_surveillance.py
+```
+
+---
+
+## Future Improvements
+
+- Blacklisted person management
+- Multi-camera surveillance
+- Weapon detection
+- Cloud database integration
+- Mobile application support
+- Email notifications
+- Face recognition accuracy improvements
+
+---
 
 ## Author
 
-**Wupadrastha Tejaswini**
+**W. Tejaswini**
 
 Master of Computer Applications (MCA)
 
-Project: **Edge AI Smart Surveillance System**
+Project: Edge AI Smart Surveillance System
+
+
+
+
