@@ -91,8 +91,117 @@ CHAT_ID = "YOUR_CHAT_ID"
 python final_facenet_surveillance.py
 ```
 
+# project Demonstration
+## Input
+### Person Registration
+
+Registers an authorized person's facial information into the surveillance database.
+
+![Person Registration](screenshots/person_registration.png)
+
 ---
 
+### Photo Capturing
+
+Captures facial images that are later converted into facial embeddings for recognition.
+
+![Photo Capturing](screenshots/photo_capturing.png)
+
+---
+
+### Blacklisted Person Submission
+
+Registers blacklisted individuals so the system can identify them during surveillance.
+
+![Blacklisted Person Submission](screenshots/blacklisted_person_submission.png)
+
+---
+
+## 📤 Output
+
+### Authorised Person Detection
+
+Recognizes registered users in real time and displays their identity.
+
+![Authorised Person](screenshots/authorised_person.png)
+
+---
+
+### Authorised Person Detection (Example 2)
+
+Another successful recognition example with confidence score.
+
+![Authorised Person 2](screenshots/authorised_person2.png)
+
+---
+
+### Blacklisted Person Detection
+
+Detects blacklisted individuals and immediately generates an alert.
+
+![Blacklisted Person Detection](screenshots/blacklisted_person_detection.png)
+
+---
+
+### Unknown Person Detection
+
+Detects an unregistered individual and labels them as Unknown.
+
+![Unknown Person Detection](screenshots/unknown_person_detection.png)
+
+---
+
+### Mask Detection
+
+Identifies whether a detected person is wearing a face mask.
+
+![Mask Detection](screenshots/mask_detection.png)
+
+---
+
+### Detection Record
+
+Stores surveillance information including person name, mask status, confidence score, timestamp, and image path.
+
+![Detection Record](screenshots/detection_record.png)
+
+---
+
+### Dashboard
+
+Displays surveillance records through a Flask web dashboard.
+
+![Dashboard](screenshots/Dashboard.png)
+
+---
+
+### Telegram Alert
+
+Automatically sends Telegram notifications whenever an unknown or blacklisted person is detected.
+
+![Telegram Alert](screenshots/telegram_alert.png)
+
+---
+
+## Future Improvements
+
+- Multi-camera surveillance
+- Cloud database integration
+- Mobile application support
+- Email notifications
+- Improved face recognition accuracy
+- Visitor analytics
+- Advanced AI-based behavior analysis
+
+---
+
+## Author
+
+**W. Tejaswini**
+
+Master of Computer Applications (MCA)
+
+Project: **Edge AI Smart Surveillance System**
 ## Future Improvements
 
 - Blacklisted person management
@@ -112,6 +221,9 @@ python final_facenet_surveillance.py
 Master of Computer Applications (MCA)
 
 Project: Edge AI Smart Surveillance System
+
+---
+
 
 
 
